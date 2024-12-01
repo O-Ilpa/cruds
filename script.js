@@ -75,8 +75,8 @@ deleteProduct = (i) => {
 
 createBtn.addEventListener("click", function () {
   if (
-    title.value.trim() === "" &&
-    category.value.trim() === "" &&
+    title.value.trim() === "" ||
+    category.value.trim() === "" ||
     price.value.trim() === ""
   ) {
     errorMsg.classList.remove("animation");
@@ -122,6 +122,8 @@ createBtn.addEventListener("click", function () {
   } else {
     delBtn.textContent = "";
   }
+  total.innerHTML = "";
+  total.style.backgroundColor = "red";
 });
 if (productData.length > 0) {
   delBtn.innerHTML = `<button onclick="deleteAll()">Delete all</button>`;
